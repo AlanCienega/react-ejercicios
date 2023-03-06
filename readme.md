@@ -20,3 +20,7 @@ es la funcion que nos va a permitir cambiar ese valor.
 ```
 const [counter, setCounter] = useState(0)
 ```
+### useEffect
+se utilizan para poder utlizar funciones especiales como funciones asincronas dentro de react, es decir funciones que produzcan efectos secundarios, se usa pasandole una funcion como primer parametro, en el segundo se pasa unalista de dependencias, es decir el valor que vamos a usar y que es necesario en nuestra funcion especial o no pura.
+
+cuando usamos este tipo de funciones hay que retornar una funcion de reseteo, que va a servir para cuando se desmonte el componente quede como estaba a pesar de los cambios.
