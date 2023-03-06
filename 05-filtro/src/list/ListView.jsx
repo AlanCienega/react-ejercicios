@@ -4,7 +4,7 @@ function ListView({elements, functionItemsFilter}) {
     <>
     <input type="search" placeholder="Buscar ..." onChange={ev => functionItemsFilter(ev.target.value)}/>
     <ul>
-      {elements.map((name, index) => <li key={index}>{name}</li> )}
+      {elements.map((name, index) => name && <li key={index}>{name}</li> )}
     </ul>
     </>
   )

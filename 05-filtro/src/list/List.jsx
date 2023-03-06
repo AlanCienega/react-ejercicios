@@ -15,7 +15,9 @@ function List() {
   }
 
   function getFilteredItems(query) {
-    let filtered = tecnologies.filter(name => name.toLocaleLowerCase().includes(query.toLocaleLowerCase()))
+    let filtered = tecnologies.map(
+      name => name.toLocaleLowerCase().includes(query.toLocaleLowerCase()) ? name : null
+    )
     return filtered
   }
   return(
