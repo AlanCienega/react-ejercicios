@@ -27,3 +27,16 @@ cuando usamos este tipo de funciones hay que retornar una funcion de reseteo, qu
 
 ## patron componentes presentacion y contenedores
 en este tipo de patron se separan responsabilidades en componentes, los componentes de presentacion se encargan de como se van a renderizar los datos y los contenedores llevaran la logica de programacion
+
+### props
+los componentes pueden tener props incluso si no se le declara en el ejemplo siguitente podemos acceder al props.children
+```
+function OtroComponente({children})
+{
+  { children }
+}
+```
+aun si llamamos al componente asi:
+```
+<Componente/>
+```
