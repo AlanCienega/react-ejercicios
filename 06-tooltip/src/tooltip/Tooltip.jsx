@@ -1,6 +1,27 @@
-function Tooltip() {
+import { useEffect, useRef, useState } from "react";
+
+function Tooltip({text, domRect}) {
+  let [position, setPosition] = useState({x:0, y:0})
+  let toolTipElement = useRef()
+  useEffect(()=>{
+    let {width, height} = toolTipElement.current.getBoundingClientRect()
+    let coords = {}
+    if (domRect.y < height) {
+      coords.y = domRect.y + height
+    }else
+    {
+      coords.y = domRect.y - height
+    }
+    coords.x = domRect.x + (domRect.width / 2) - (width / 2)
+    setPosition(coords)
+  }, [domRect])
   return(
-    <div></div>
+    <>
+    <span ref={toolTipElement} style={{left:position.x, top:position.y}}
+      className="tooltip">
+      {text}
+    </span>
+    </>
   );
 }
 
